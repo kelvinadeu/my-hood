@@ -50,4 +50,6 @@
 #### cd neighbourhood-web app
 #### atom .
 #### code .
-####
+
+## To run this program
+#### run this command lines in your terminal:
