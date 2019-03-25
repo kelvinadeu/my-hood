@@ -46,4 +46,8 @@
 
 ## To start using this project use the following commands:
 
-#### git clone 
+#### git clone
+#### cd neighbourhood-web app
+#### atom .
+#### code .
+####
