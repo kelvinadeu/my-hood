@@ -44,6 +44,8 @@ class Business(models.Model):
     image = models.ImageField(upload_to = 'Businessimage/')
     description = models.CharField(max_length = 200)
     profile = models.ForeignKey(Profile, related_name = 'profiles')
+    neighbourhood = models.ForeignKey(Neighbourhood, related_name='businesses')
+
 
     def save_business(self):
         self.save()
@@ -59,4 +61,19 @@ class Business(models.Model):
         business = cls.objects.filter(title__icontains=search_term)
         return business
 
-        
+class Post(models.Model):
+    user_id = models.ForeignKey(Profile_name='profile')
+    post = models.CharField(max_length = 40)
+    neighbourhood = models.ForeignKey(Neighbourhood, related_name = 'post')
+
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
+    def _str_(self):
+        return self.post
+
+                
