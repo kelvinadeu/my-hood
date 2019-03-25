@@ -36,3 +36,10 @@ class Hood(models.Model):
     image = models.ImageField(upload_to = 'pics',null = True)
     admin = models.ForeignKey(Profile, related_name = 'hoods', null=True)
     description = models.CharField(max_length = 300, default = 'My hood')
+
+class Business(models.model):
+    name = models.CharField(max_length = 30)
+    cartefory = models.CharField(max_length = 30)
+    phone_number = models.CharField(max_length = 10)
+    image = models.ImageField(upload_to = 'Businessimage/')
+    description = models.CharField(max_length = 200)    
