@@ -37,7 +37,7 @@ class Hood(models.Model):
     admin = models.ForeignKey(Profile, related_name = 'hoods', null=True)
     description = models.CharField(max_length = 300, default = 'My hood')
 
-class Business(models.model):
+class Business(models.Model):
     name = models.CharField(max_length = 30)
     cartefory = models.CharField(max_length = 30)
     phone_number = models.CharField(max_length = 10)
@@ -52,4 +52,4 @@ class Business(models.model):
         self.delete()
 
     def __str__(self):
-        return self.name    
+        return self.name
