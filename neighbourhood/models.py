@@ -76,4 +76,14 @@ class Post(models.Model):
     def _str_(self):
         return self.post
 
-                
+class Location(models.Model):
+    name = models.CharField(max_length = 30)
+
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
+    def _str_(self):
+        return self.name        
