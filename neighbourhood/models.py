@@ -53,3 +53,10 @@ class Business(models.Model):
 
     def __str__(self):
         return self.name
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        business = cls.objects.filter(title__icontains=search_term)
+        return business
+
+        
