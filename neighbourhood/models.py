@@ -42,4 +42,11 @@ class Business(models.model):
     cartefory = models.CharField(max_length = 30)
     phone_number = models.CharField(max_length = 10)
     image = models.ImageField(upload_to = 'Businessimage/')
-    description = models.CharField(max_length = 200)    
+    description = models.CharField(max_length = 200)
+    profile = models.ForeignKey(Profile, related_name = 'profiles')
+
+    def save_business(self):
+        self.save()
+
+    def delete_business(self):
+        self.delete()
