@@ -53,3 +53,12 @@
 
 ## To run this program
 #### run this command lines in your terminal:
+
+## Prerequisites
+
+## You need the following to work on the project:
+#### -Python version 3.6
+#### -Django 3.6
+#### -Pip
+#### -virtualenv
+#### -A text Editor
