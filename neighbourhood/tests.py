@@ -16,3 +16,8 @@ def test_save_profile(self):
         self.new_profile.save_profile()
         profiles = UserProfile.objects.all()
         self.assertTrue(len(profiles) > 0)
+
+def test_delete_profile(self):
+        self.new_profile.delete_profile()
+        profiles = UserProfile.objects.all()
+        self.assertTrue(len(profiles) == 0)
