@@ -4,11 +4,11 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 # Create your models here.
 class Profile(models.Model):
-    user = models.CharField(max_length = 30,null=True)
+    user_id = models.CharField(max_length = 30,null=True)
     first_name = models.CharField(max_length = 30,null=True)
     last_name = models.CharField(max_length = 30, null=True)
     bio = models.TextField(blank=True)
-    # Profile_pic = models.ImageField(upload_to='profile/')
+    # Profile_photo = models.ImageField(upload_to='pics/')
     # hood = models.ForeignKey('Hood', blank=True, null=True)
 
     def save_profile(self):
@@ -35,4 +35,4 @@ class Hood(models.Model):
     name = models.CharField(max_length = 300)
     image = models.ImageField(upload_to = 'pics',null = True)
     admin = models.ForeignKey(Profile, related_name = 'hoods', null=True)
-    description = models.CharField(max_length = 300, default = 'My hood')    
+    description = models.CharField(max_length = 300, default = 'My hood')
