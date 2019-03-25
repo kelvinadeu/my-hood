@@ -86,4 +86,13 @@ class Location(models.Model):
         self.delete()
 
     def _str_(self):
-        return self.name        
+        return self.name
+
+class Cartegory(models.Model):
+    name = models.CharField(max_length = 30)
+
+    def save_cartegory(self):
+         self.save()
+
+    def delete_cartegory(self):
+        self.delete()                     
