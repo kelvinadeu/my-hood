@@ -50,3 +50,6 @@ class Business(models.model):
 
     def delete_business(self):
         self.delete()
+
+    def __str__(self):
+        return self.name    
