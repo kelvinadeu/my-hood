@@ -23,13 +23,13 @@ class Profile(models.Model):
         return profiles
 
 @receiver(post_save,sender=User)
-def Create_user_profile(sender,instance,created, **kwargs):
-    if created:
-        profile.objects.created(user=instance)
+# def Create_user_profile(sender,instance,created, **kwargs):
+#     if created:
+#         profile.objects.created(user =instance)
 
-@receiver(post_save,sender=User)
-def save_user_profile(sender,instance, **kwargs):
-    insatnce.profile.save()
+# @receiver(post_save,sender=User)
+# def save_user_profile(sender,instance, **kwargs):
+#     insatnce.profile.save()
 
 class Hood(models.Model):
     name = models.CharField(max_length = 300)
@@ -44,7 +44,6 @@ class Business(models.Model):
     image = models.ImageField(upload_to = 'Businessimage/')
     description = models.CharField(max_length = 200)
     profile = models.ForeignKey(Profile, related_name = 'profiles')
-    neighbourhood = models.ForeignKey(Neighbourhood, related_name='businesses')
 
 
     def save_business(self):
@@ -62,9 +61,8 @@ class Business(models.Model):
         return business
 
 class Post(models.Model):
-    user_id = models.ForeignKey(Profile_name='profile')
+    user_id = models.ForeignKey(User)
     post = models.CharField(max_length = 40)
-    neighbourhood = models.ForeignKey(Neighbourhood, related_name = 'post')
 
 
     def save_post(self):
@@ -98,4 +96,4 @@ class Cartegory(models.Model):
         self.delete()
 
     def __str__ (self):
-        return self.cartegory                   
+        return self.cartegory
