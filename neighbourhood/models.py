@@ -30,3 +30,9 @@ def Create_user_profile(sender,instance,created, **kwargs):
 @receiver(post_save,sender=User)
 def save_user_profile(sender,instance, **kwargs):
     insatnce.profile.save()
+
+class Hood(models.Model):
+    name = models.CharField(max_length = 300)
+    image = models.ImageField(upload_to = 'pics',null = True)
+    admin = models.ForeignKey(Profile, related_name = 'hoods', null=True)
+    description = models.CharField(max_length = 300, default = 'My hood')    
