@@ -73,7 +73,7 @@ class Post(models.Model):
     def delete_post(self):
         self.delete()
 
-    def _str_(self):
+    def __str__(self):
         return self.post
 
 class Location(models.Model):
@@ -85,8 +85,8 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
-    def _str_(self):
-        return self.name
+    def __str__(self):
+        return self.location
 
 class Cartegory(models.Model):
     name = models.CharField(max_length = 30)
@@ -95,4 +95,7 @@ class Cartegory(models.Model):
          self.save()
 
     def delete_cartegory(self):
-        self.delete()                     
+        self.delete()
+
+    def __str__ (self):
+        return self.cartegory                   
