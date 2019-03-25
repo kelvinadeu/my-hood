@@ -26,3 +26,7 @@ class BusinessTestClass(TestCase):
     def setUp(self):
         self.new_user = User.objects.create_user(username='user',password='user-password')
         self.new_business = Business(id = 1,name='Test Business',owner=self.new_user,business_location='Test Location',email='business@email.com')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_business,Business))
+    
