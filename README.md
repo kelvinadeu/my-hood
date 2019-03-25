@@ -24,3 +24,14 @@
 #### Input Example: Click on Logout on the navigation bar
 
 #### Output Example: Redirected to the login page
+
+#### The program should direct the user to their neighborhood page when logged in and already has a neighborhood:
+
+#### Input Example: Log in
+#### Output Example: Redirected to their neighborhood page
+
+####The program should direct the user to the index page with neighborhood listings when logged in and has no neighborhood:
+
+#### Input Example: Log in
+
+#### Output Example: Redirect the user to the index page with neighborhood listings
