@@ -41,3 +41,9 @@
 #### Input Example: Login in as Admin
 
 #### Output Example: Navigate to the admin dashboard
+
+## Setup/Installation Requirements
+
+## To start using this project use the following commands:
+
+#### git clone 
