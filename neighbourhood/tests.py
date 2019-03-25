@@ -21,3 +21,8 @@ def test_delete_profile(self):
         self.new_profile.delete_profile()
         profiles = UserProfile.objects.all()
         self.assertTrue(len(profiles) == 0)
+
+class BusinessTestClass(TestCase):
+    def setUp(self):
+        self.new_user = User.objects.create_user(username='user',password='user-password')
+        self.new_business = Business(id = 1,name='Test Business',owner=self.new_user,business_location='Test Location',email='business@email.com')
