@@ -1,6 +1,12 @@
-{%for hoods in all_hoods%}
 {% include "navbar.html" %}
+{%for hoods in all_hoods%}
 <p>{{hoods.name}}</p>
 <img src="{{hoods.image.url}}">
 <p>{{hoods.population}}</p>
+{%endfor%}
+{%for business in businesses%}
+<h1>Businesses available:</h1>
+<h4>{{business.name}}</h4>
+<p>{{business.description}}</p>
+<img src="{{business.image.url}}" alt="">
 {%endfor%}

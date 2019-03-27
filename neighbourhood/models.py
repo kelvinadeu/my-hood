@@ -41,9 +41,9 @@ class Business(models.Model):
     name = models.CharField(max_length = 30)
     cartegory = models.CharField(max_length = 30)
     phone_number = models.CharField(max_length = 10)
-    image = models.ImageField(upload_to = 'Businessimage/')
+    image = models.ImageField(upload_to = 'Businessimage',null=True)
     description = models.CharField(max_length = 200)
-    profile = models.ForeignKey(Profile, related_name = 'profiles')
+    # profile = models.ForeignKey(Profile, related_name = 'profiles')
 
 
     def save_business(self):

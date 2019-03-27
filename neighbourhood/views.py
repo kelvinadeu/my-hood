@@ -29,7 +29,7 @@ def profile(request,user_id):
     user_id = request.user
     profile = Profile.objects.get(user=request_user_id)
     return render (request, 'profile/profile.html',{"profile":profile,"hoods":hoods,"user_id":user_id})
-
+@login_required(login_url='/accounts/login')
 def edit_profile(request):
     user_id = rquest.user
     profile = Profile.objects.get(user=user_id)
@@ -44,14 +44,16 @@ def edit_profile(request):
 
 @login_required(login_url='/accounts/login')
 def add_business(request):
+    businesses= Hood.objects.get(id=id)
     current_user = request.user
+    form=BusinessForm()
     if request.method == 'POST':
         form = BusinessForm(request.POST, request.FILES)
         if form.is_valid():
-            image = form.save(commit=False)
-            image.uploaded_by = current_user
+            image = BusinessForm.save(commit=False)
+            business.uploaded_by = current_user
             image.save()
             return redirect('home')
     else:
         form = BusinessForm()
-    return render(request, 'add-business.html', {'form': form})
+    return render(request,'add-business.html',{"businesses":businesses,"image":image, 'form': form})
