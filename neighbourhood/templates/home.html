@@ -1,0 +1,6 @@
+{%for hoods in all_hoods%}
+{% include "navbar.html" %}
+<p>{{hoods.name}}</p>
+<img src="{{hoods.image.url}}">
+<p>{{hoods.population}}</p>
+{%endfor%}
