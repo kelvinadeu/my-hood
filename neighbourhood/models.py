@@ -43,6 +43,7 @@ class Business(models.Model):
     phone_number = models.CharField(max_length = 10)
     image = models.ImageField(upload_to = 'Businessimage',null=True)
     description = models.CharField(max_length = 200)
+    business_hood = models.ForeignKey('Hood', on_delete=models.CASCADE)
     # profile = models.ForeignKey(Profile, related_name = 'profiles')
 
 

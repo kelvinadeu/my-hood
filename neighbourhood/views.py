@@ -44,16 +44,16 @@ def edit_profile(request):
 
 @login_required(login_url='/accounts/login')
 def add_business(request):
-    businesses= Hood.objects.get(id=id)
+
     current_user = request.user
     form=BusinessForm()
     if request.method == 'POST':
         form = BusinessForm(request.POST, request.FILES)
         if form.is_valid():
-            image = BusinessForm.save(commit=False)
-            business.uploaded_by = current_user
-            image.save()
+            business = BusinessForm.save()
+            business.name= current_user
+            business.save()
             return redirect('home')
     else:
         form = BusinessForm()
-    return render(request,'add-business.html',{"businesses":businesses,"image":image, 'form': form})
+    return render(request,'add-business.html',{'form': form})
